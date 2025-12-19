@@ -41,7 +41,7 @@ function sync_user_model(){
      };
  
  //Once the model is synced, comment out the sync function call
- //sync_user_model() 
+//sync_user_model() 
 
 
 
