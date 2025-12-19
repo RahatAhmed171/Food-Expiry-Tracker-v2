@@ -1,0 +1,58 @@
+<h1>Welcome, <%= name %>!</h1>
+<p>Your age is <%= store %>.</p>
+<p>Your email is <%= email %></p>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+   
+</head>
+
+<body>
+    <h1>user info</h1>
+    <form action="profile" method="post">
+       
+        <label for="email">Email:</label>
+        <input type="email" value="<%= email %>" id="email" name="email" 
+                readonly>
+        <br>
+        <label for="fname">First Name:</label>
+        <input type="fname" id="fname" name="fname" value="<%= name %>">
+        <label for="storename">Storename:</label>
+        <input type="storename" id="storename" name="storename" value="<%= store %>">
+               
+       
+               
+        <button type="submit">Save Changes</button>
+
+       
+    </form>
+    <h1>Change Your Password</h1>
+    <form action="profile/changepassword" method="post">
+       
+    <label for="password">Type your current Password:</label>
+    <input type="password" id="password" name="password">
+    <br>
+    <label for="newpassword">Type your new Password:</label>
+    <input type="password" id="newpassword" name="newpassword">
+    <br>
+    <label for="retypenewpassword">Retype your new password:</label>
+    <input type="password" id="retypenewpassword" name="retypenewpassword">
+               
+       
+               
+        <button type="submit">Save Changes</button>
+
+       
+    </form>
+
+
+
+</body>
+
+</html>

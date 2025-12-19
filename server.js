@@ -4,6 +4,7 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 const authRoutes = require('./routes/authRoutes');
 const dashboardRoutes=require('./routes/dashboardRoutes')
+const userRoutes=require('./routes/userRoutes')
 
 
 
@@ -33,5 +34,6 @@ app.get('/', function(req, res) {
 
 app.use('/auth', authRoutes);
 app.use('/dashboard',dashboardRoutes);
+app.use('/user',userRoutes);
 app.listen(8080);
 console.log('Server is listening on port 8080');
