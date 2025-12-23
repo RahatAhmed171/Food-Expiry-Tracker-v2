@@ -50,6 +50,37 @@
 
        
     </form>
+    <form action="/products" method="get">
+        <input type="hidden" name="limit" value="5">
+       
+    
+               
+       
+               
+        <button type="submit">get products</button>
+
+       
+    </form>
+    <h1>insert new products</h1>
+    <form action="/products" method="post">
+       
+    <label for="pname">product name:</label>
+    <input type="name" id="pname" name="pname">
+    <br>
+    <label for="ptype">product type:</label>
+    <input type="name" id="ptype" name="ptype">
+    <br>
+    <label for="threshold">stock threshold:</label>
+    <input type="number" id="threshold" name="threshold">
+    <label for="total">stock total:</label>
+    <input type="number" id="total" name="total">
+               
+       
+               
+        <button type="submit">create products</button>
+
+       
+    </form>
 
 
 
