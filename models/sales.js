@@ -17,13 +17,13 @@ const sequelize=new Sequelize('Foodexpirytracker','root','',{
      },
      customer_name:{
          type: Sequelize.DataTypes.STRING,
-         allowNull:false
+         allowNull:true
          
         
      },
      customer_phone:{
          type: Sequelize.DataTypes.STRING,
-         allowNull:false
+         allowNull:true
      },
       customer_type:{
          type: Sequelize.DataTypes.STRING,
@@ -35,15 +35,15 @@ const sequelize=new Sequelize('Foodexpirytracker','root','',{
      },
       advance:{
          type: Sequelize.DataTypes.FLOAT,
-         allowNull:false
+         allowNull:true
      },
       remaining:{
          type: Sequelize.DataTypes.FLOAT,
-         allowNull:false
+         allowNull:true
      },
       delivery_time:{
          type: Sequelize.DataTypes.DATE,
-         allowNull:false
+         allowNull:true
      }
      
     
@@ -58,11 +58,9 @@ const sequelize=new Sequelize('Foodexpirytracker','root','',{
 
  
  function sync_sale_model(){
-      sale.sync().then(()=>{
-          console.log(" sale model syncing succesful")
-      }).catch((err)=>{
-          console.log(`Error occured :${err}`)
-      })
+     sale.sync({ alter: true }).then(() => { // This DROPS and RECREATES the table
+            console.log("sale model recreated successfully");
+        });
       };
   
   //Once the model is synced, comment out the sync function call

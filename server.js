@@ -6,6 +6,7 @@ const authRoutes = require('./routes/authRoutes');
 const dashboardRoutes=require('./routes/dashboardRoutes')
 const userRoutes=require('./routes/userRoutes')
 const productRoutes=require('./routes/productRoutes')
+const saleRoutes=require('./routes/saleRoutes')
 
 
 
@@ -18,6 +19,7 @@ const productRoutes=require('./routes/productRoutes')
 app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(cookieParser())
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -37,5 +39,6 @@ app.use('/auth', authRoutes);
 app.use('/dashboard',dashboardRoutes);
 app.use('/user',userRoutes);
 app.use('/products',productRoutes);
+app.use('/sale',saleRoutes);
 app.listen(8080);
 console.log('Server is listening on port 8080');
