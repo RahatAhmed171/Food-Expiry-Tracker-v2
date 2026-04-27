@@ -34,14 +34,12 @@ const sequelize=new Sequelize('Foodexpirytracker','root','',{
  user.hasMany(batch,{foreignKey:{allowNull:false}})
  product.hasMany(batch,{foreignKey:{allowNull:false}})
 
-
+ batch.belongsTo(product,{foreignKey:{allowNull:false}})
  
  function sync_batch_model(){
-      batch.sync().then(()=>{
-          console.log(" batch model syncing succesful")
-      }).catch((err)=>{
-          console.log(`Error occured :${err}`)
-      })
+    batch.sync({ alter: true }).then(() => { // This DROPS and RECREATES the table
+        console.log("batch model recreated successfully");
+    });
       };
   
   //Once the model is synced, comment out the sync function call
