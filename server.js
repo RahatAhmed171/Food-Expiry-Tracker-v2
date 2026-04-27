@@ -7,6 +7,7 @@ const dashboardRoutes=require('./routes/dashboardRoutes')
 const userRoutes=require('./routes/userRoutes')
 const productRoutes=require('./routes/productRoutes')
 const saleRoutes=require('./routes/saleRoutes')
+const batchRoutes=require('./routes/batchRoutes')
 
 
 
@@ -40,5 +41,6 @@ app.use('/dashboard',dashboardRoutes);
 app.use('/user',userRoutes);
 app.use('/products',productRoutes);
 app.use('/sale',saleRoutes);
+app.use('/batch',batchRoutes);
 app.listen(8080);
 console.log('Server is listening on port 8080');
